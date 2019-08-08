@@ -37,7 +37,7 @@ public class BatchConfiguration {
     public FlatFileItemReader<LogLine> reader(final LogLineMapper logLineMapper) {
         return new FlatFileItemReaderBuilder<LogLine>()
                 .name("logLineReader")
-                .resource(new ClassPathResource("sample-data.log"))
+                .resource(new ClassPathResource("sample-data"))
                 .lineMapper(logLineMapper)
                 .build();
     }

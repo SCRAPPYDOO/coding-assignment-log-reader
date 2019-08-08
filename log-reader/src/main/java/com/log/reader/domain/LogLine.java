@@ -1,5 +1,11 @@
 package com.log.reader.domain;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class LogLine {
     private final String id;
     private final String state;
@@ -7,7 +13,12 @@ public class LogLine {
     private final String host;
     private final long timestamp;
 
-    public LogLine(String id, String state, String type, String host, long timestamp) {
+    @JsonCreator
+    public LogLine(@JsonProperty(value="id") String id,
+                   @JsonProperty(value="state") String state,
+                   @JsonProperty(value="type") String type,
+                   @JsonProperty(value="host") String host,
+                   @JsonProperty(value="timestamp") long timestamp) {
         this.id = id;
         this.state = state;
         this.type = type;

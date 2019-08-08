@@ -74,7 +74,7 @@ public class BatchConfiguration {
     public Step step(final JdbcBatchItemWriter<LogLine> writer) {
         return stepBuilderFactory.get("step")
                 .<LogLine, LogLine> chunk(10)
-                .reader(reader())
+                .reader(reader(logLineMapper()))
                 .processor(processor())
                 .writer(writer)
                 .build();

@@ -1,0 +1,3 @@
+rootProject.name = 'coding-assignment-log-reader'
+
+include 'log-reader'

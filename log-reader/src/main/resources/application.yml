@@ -9,6 +9,6 @@ spring:
       ddl-auto: none
 log:
   data:
-    path: sample-data
+    path:
   alert:
     difference_in_ms: 4

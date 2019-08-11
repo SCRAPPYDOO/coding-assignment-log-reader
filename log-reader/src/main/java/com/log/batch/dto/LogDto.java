@@ -1,11 +1,11 @@
-package com.log.reader.domain;
+package com.log.batch.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LogLine {
+public class LogDto {
     private final String id;
     private final String state;
     private final String type;
@@ -13,11 +13,11 @@ public class LogLine {
     private final long timestamp;
 
     @JsonCreator
-    public LogLine(@JsonProperty(value="id") String id,
-                   @JsonProperty(value="state") String state,
-                   @JsonProperty(value="type") String type,
-                   @JsonProperty(value="host") String host,
-                   @JsonProperty(value="timestamp") long timestamp) {
+    public LogDto(@JsonProperty(value="id") String id,
+                  @JsonProperty(value="state") String state,
+                  @JsonProperty(value="type") String type,
+                  @JsonProperty(value="host") String host,
+                  @JsonProperty(value="timestamp") long timestamp) {
         this.id = id;
         this.state = state;
         this.type = type;

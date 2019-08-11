@@ -1,9 +1,11 @@
-DROP TABLE logs IF EXISTS;
+DROP TABLE log_entity IF EXISTS;
 
-CREATE TABLE logs (
+CREATE TABLE log_entity (
     id VARCHAR(20),
-    state VARCHAR(20),
     type VARCHAR(20),
     host VARCHAR(20),
-    timestamp TIMESTAMP
-);
+    started BIGINT,
+    finished BIGINT,
+    duration BIGINT,
+    alert BOOLEAN DEFAULT FALSE
+)

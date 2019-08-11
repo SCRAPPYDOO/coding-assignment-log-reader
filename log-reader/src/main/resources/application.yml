@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:hsqldb:file:data/mydb
+    username: sa
+    password:
+    driverClassName: org.hsqldb.jdbcDriver
+  jpa:
+    hibernate:
+      ddl-auto: none
+log:
+  data:
+    path: sample-data
+  alert:
+    difference_in_ms: 4
